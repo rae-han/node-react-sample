@@ -6,6 +6,9 @@ const session = require('express-session');
 const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
 
+const host = '';
+const port = '';
+
 dotenv.config();
 // const indexRouter = require('./routes/index');
 // const authRouter = require('./routes/auth');
@@ -62,5 +65,20 @@ app.use((err, req, res, next) => {
 
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기중');
+
+  console.log(process)
   
+  let serverMessages = [  
+    `\x1b[34m ################################################################ \x1b[0m`,
+    `\x1b[34m # \x1b[0m\x1b[5m The Safer Client Web Server \x1b[0m`,
+    `\x1b[34m # \x1b[0m Server listening on \x1b[31m http://${host}:${port} \x1b[0m`,
+    `\x1b[34m ################################################################ \x1b[0m`,
+    `\x1b[34m # \x1b[0m Node.js version \x1b[34m | \x1b[31m ${process.version} \x1b[0m`,
+    `\x1b[34m # \x1b[0m Pid             \x1b[34m | \x1b[31m ${process.pid} \x1b[0m`,
+    `\x1b[34m ################################################################ \x1b[0m`,
+  ];
+
+  let serverMsg = serverMessages.join('\n')
+
+  console.log(serverMsg);
 });
