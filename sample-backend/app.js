@@ -66,7 +66,7 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기중');
 
-  console.log(process)
+  console.log(process);
   
   let serverMessages = [  
     `\x1b[34m ################################################################ \x1b[0m`,
@@ -82,3 +82,4 @@ app.listen(app.get('port'), () => {
 
   console.log(serverMsg);
 });
+
