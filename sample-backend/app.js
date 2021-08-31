@@ -3,7 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const nunjucks = require('nunjucks');
+// const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
 
 const host = '';
@@ -16,11 +16,11 @@ dotenv.config();
 
 const app = express();
 app.set('port', process.env.PORT || 8010);
-app.set('view engine', 'html');
-nunjucks.configure('views', {
-  express: app,
-  watch: true,
-});
+// app.set('view engine', 'html');
+// nunjucks.configure('views', {
+//   express: app,
+//   watch: true,
+// });
 // sequelize.sync({ force: false })
 //   .then(() => {
 //     console.log('데이터베이스 연결 성공');
@@ -82,4 +82,3 @@ app.listen(app.get('port'), () => {
 
   console.log(serverMsg);
 });
-
